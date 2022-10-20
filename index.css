@@ -1,0 +1,79 @@
+body {
+    background-color: rgb(74, 74, 74);
+    font-family: Georgia;
+    margin: 0vw;
+    padding: 0vw;
+    transition: 1s;
+}
+
+#title {
+    background-image: url("/assets/title-background.jpg");
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 7vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+    background-size: 80vw;
+    margin-bottom: 1vw;
+    transition: .3ms;
+}
+
+.bordered-slim {
+    border: .25vw solid black;
+}
+
+#body_content {
+    width: 50vw;
+    /* margin-left: 30vw;
+    margin-right: 30vw; */
+}
+
+.featured {
+    width: 50%;
+    height: 75%;
+}
+
+.featured_img {
+    width: 50%;
+    height: 50%;
+}
+
+#nav {
+    flex: 1;
+}
+
+#nav a {
+    border: solid black 2px;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: 0.2s;
+    font-size: 1vw;
+    padding: 1vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+#nav a:hover {
+    font-size: 1.75vw;
+    color: rgb(255, 255, 255);
+    padding: .25vw;
+    margin: .5vw;
+}
+
+.img-grid {
+    grid-template: 3 3;
+}
+
+.img{
+    width: 17.5vw;
+    height: 17.5vw;
+    margin: 2.5vw;
+    object-fit: cover;
+    border: black solid .5vw;
+}
