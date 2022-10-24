@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			body, html {
+				margin:0;
+				padding:0;
+				font-family:Arial,sans-serif;
+				color:#717171;
+			}
+			h1 {
+				color:black;
+				margin-bottom:10px;
+			}
+			#main {
+				position:relative;
+				width:940px;
+				padding:20px;
+				margin:auto;
+			}
+			#right {
+				position:relative;
+				float:left;
+				margin: 10px;
+				width:600px;
+				vertical-align:top;
+			}
+			#left {
+				position:relative;
+				float:left;
+				width:260px;
+				padding:10px;
+				margin-right:10px;
+				border-right:3px solid #7A91A1;
+				background-color:#E8E0FF;
+			}
+			.half {
+				position:relative;
+				display:inline-block;
+				width:49%;
+			}
+			#original {
+				vertical-align:top;
+			}
+			#messageArea {
+				width:100%;
+			}
+			#img, #cover {
+				width:290px;
+			}
+			.btns {
+				margin-top:15px;
+				margin-bottom:10px;
+				padding: 0 40px;
+			}
+			.btn {
+				padding:10px 20px 10px 20px;
+				-moz-border-radius:15px;
+				-o-border-radius:15px;
+				-webkit-border-radius:15px;
+				border-radius:15px;
+				border:2px solid #FF4545;
+				cursor:pointer;
+				color:#FF4545;
+				background-color:white;
+				width:50px;
+				text-align:center;
+			}
+			.btn:hover {
+				color:white;
+				background-color:#FF4545;
+			}
+			#download {
+				position:absolute;
+				top:47px;
+				left:4px;
+				padding:10px 5px 5px 3px;
+				width:10px;
+				border-top:1px solid black;
+				-moz-border-radius:0 0 15px 15px;
+				-o-border-radius:0 0 15px 15px;
+				-webkit-border-radius:0 0 15px 15px;
+				border-radius:0 0 15px 15px;
+				text-decoration:none;
+			}
+			#download:hover {
+				width:70px;
+			}
+			#download:hover:after {
+				content:"ownload";
+			}
+			#description {
+				line-height:25px;
+				padding-bottom:5px;
+				border-bottom:1px solid lightgrey;
+			}
+			#capacity {
+				font-weight:normal;
+				font-size:15px;
+				margin-left:10px;
+				vertical-align:middle;
+			}
+			.note {
+				font-size:9px;
+				text-align:center;
+				color:black;
+			}
+			.invisible {
+				visibility:hidden;
+			}
+			.clear {
+				clear:both;
+			}
+			.footer {
+				margin-top:25px;
+				width:100%;
+				text-align:right;
+			}
+			textarea{
+				width:228px;
+				padding:10px;
+				height:200px;
+				resize:none;
+			}
+			h2{
+				margin-top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<h1>Information Hiding: Steganography done with JavaScript</h1>
+			<div id="description">This little demo here demonstrates the core functionality of my JavaScript library steganography.js. Basically it allows you to hide or read data in or from the alpha channel of any image.<br/>Regarding the demo: first of all you may hide the text from the textarea inside any image - you have previously selected from your local filesystem - by using the "Hide"-button. After the new image with the text encoded inside is generated you may download it and distribute it with the secret message inside instead of the old boring messageless picture. As the second part it is possible to read a message encoded inside the selected image using the "Read"-button.<br/><span class="note">Note that there will be no message at all or some cryptic message if no alpha channel is set or the message is encoded with another algorithm, so I recommend you to use this demo to encode and decode the message.</span></div>
+			<div id="left">
+				<h2>Image:</h2>
+				<input id="file" type="file"/><br/>
+				<h2>Text:<span id="capacity"></span></h2>
+				<textarea id="text">Put Text Here</textarea>
+				<div class="btns">
+					<span id="hide" class="btn">Hide</span>
+					<span id="read" class="btn">Read</span>
+				</div>
+			</div>
+			<div id="right">
+				<div id="original" class="half">
+					<h2>Plain Image:</h2>
+					<img id="img" src="assets/pelican.jpg"/>
+				</div>
+				<div id="stego" class="half">
+					<h2>Encoded Image:</h2>
+					<img id="cover" src=""/>
+					<a id="download" class="btn small" download="cover.png" rel="nofollow"><strong>D</strong></a>
+					<div class="note">Click "D"-button or if it does not work perform right-click to download</div>
+				</div>
+				<div id="messageArea" class="invisible">
+					<h2>Message:</h2>
+					<div id="message"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="footer">&#169; by Peter Eigenschink<br/><a href="http://www.peter-eigenschink.at/">www.peter-eigenschink.at</a><br/>Follow me on Twitter <a href="https://twitter.com/eigenschinkpete">@eigenschinkpete</a></div>
+		</div>
+		<script type="text/javascript" src="/node_modules/steganography/src/steganography.js"></script>
+		<script type="text/javascript" src="/stenograph_code.js"></script>
+	</body>
+</html>
