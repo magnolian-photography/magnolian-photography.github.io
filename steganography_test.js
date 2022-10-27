@@ -1,4 +1,6 @@
 function handleFileSelect(evt) {
+    alert(toString(evt));
+    $(document).append("<img src=")
     var original = document.getElementById("original"),
         stego = document.getElementById("stego"),
         img = document.getElementById("img");
